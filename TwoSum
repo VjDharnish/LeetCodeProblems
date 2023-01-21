@@ -1,0 +1,18 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map = new HashMap<>();
+        int arr[] = new int[2];
+        int pos =0;
+        while(pos<nums.length){
+            int num2 = target-nums[pos]; 
+            if(map.containsKey(num2)){
+                arr[0] =map.get(num2);
+                arr[1] = pos;
+                break;
+            }
+            map.put(nums[pos],pos);  /// (2,0),
+            pos++;
+        }
+        return arr;
+    }
+}
